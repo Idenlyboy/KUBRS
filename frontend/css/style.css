@@ -1,6 +1,3 @@
-/* author:https://codepen.io/ecemgo/pen/vYVWKXG
-Ecem Gokdogan  */
-
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap");
 :root {
     --text-clr: #222222;
@@ -19,7 +16,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url();
+    background-color: rgb(255,255,255);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -29,7 +26,7 @@ section {
     background: rgba(200, 200, 224, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-    background: url(file:///C:/Users/iever/Desktop/%D0%9E%D1%82%D0%BA%D0%B0%D1%82%20Reg/img/upp.jpg);
+    background-image: url(/backend/public/img/upp.jpg);
     border-radius: 20px;
     overflow: hidden;
     width: min(500px, 100%);
@@ -148,9 +145,6 @@ button {
 button:hover {
     background: #27a022;
 }
-
-
-/* SHOW MESSAGE AFTER SUBMITTING  */
 
 .message {
     font-size: 1.4rem;
