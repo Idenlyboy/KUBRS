@@ -5,6 +5,7 @@ use App\Http\Controllers\WashController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\DormController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\DormController;
 |
 */
 
-Route::view('/','welcome');
+Route::view('/','login_page');
 
 // Wash
 Route::prefix('wash')->group(function () {
@@ -41,7 +42,7 @@ Route::prefix('users')->group(function () {
     Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');//форма редактирования пользователя
     Route::put('/{user}/edit', [UserController::class, 'update'])->name('users.update');//редактирование пользователя
     Route::delete('/{user}', [UserController::class, 'delete'])->name('users.delete');//удаление пользователя
-    Route::get('/{user}/pass_recovery', [UserController::class, 'pass_recovery'])->name('users.pass_recover');
+    Route::get('/pass_recovery', [UserController::class, 'pass_recovery'])->name('users.pass_recover');
     Route::put('/{user}/pass_recovery', [UserController::class, 'recovery'])->name('users.recovery');
 });
 
@@ -51,12 +52,12 @@ Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'store'])->name('auth.store');
     Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
     Route::post('/login', [AuthController::class, 'auth'])->name('auth.auth');
-    Route::get('/email_verify', [AuthController::class, 'email_verify'])->name('auth.email_verification');
+    Route::get('/email_verify/{user_id}', [AuthController::class, 'email_verify'])->name('auth.email_verification');
     Route::post('/email_verify', [AuthController::class, 'verify'])->name('auth.verify');
 });
 
 // Work
-Route::prefix('work')->group(function () {
-    Route::get('/', [WorkController::class, 'index'])->name('work');//список общежитий
-    Route::get('/{dorm}', [WorkController::class, 'dorm'])->name('work.dorm');//страница общежития
+Route::prefix('dorms')->group(function () {
+    Route::get('/', [DormController::class, 'index'])->name('dorms');//список общежитий
+    Route::get('/{dorm}', [DormController::class, 'dorm'])->name('dorms.dorm');//страница общежития
 });

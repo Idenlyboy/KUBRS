@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" type="text/css" href="{{asset('css/login_page_style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/email_verify_page_style.css') }}">
 </head>
  
 <body>
@@ -43,7 +43,7 @@
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
  
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>Вход</h1>
+          <h1>Подтверждение почты</h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
@@ -51,31 +51,22 @@
               <span class="padding-bottom--15"></span>
               <form id="stripe-login">
                 <div class="field padding-bottom--24">
-                  <label for="email">Почта</label>
-                  <input type="email" name="email">
+                  <label for="dogovor">Код подтверждения</label>
+                  <input type="dogovor" name="dogovor">
                 </div>
-                <div class="field padding-bottom--24">
-                  <div class="grid--50-50">
-                    <label for="password">Пароль</label>
-                    <div class="reset-pass">
-                      <a href="{{ route('users.pass_recover') }}">Забыли пароль?</a>
-                    </div>
-                  </div>
-                  <input type="password" name="password">
+                <div class="reset-pass">
+                  <h6 href=>Чтобы активировать ваш личный кабинет, требуется подвердить ваш адрес электронной почты</h6>
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Войти"><!--Марк-->
+                  <input type="submit" name="submit" value="Активировать">
                 </div>
                 <div class="field">
-                  <a class="ssolink" href="#"></a>
+                  <a class="ssolink" href="{{ route('auth.verify') }}"></a>
                 </div>
               </form>
             </div>
-          </div>
-          <div class="footer-link padding-top--24">
-            <span>Нет аккаунта? <a href="">Создать</a></span><!--Марк-->
           </div>
         </div>
       </div>

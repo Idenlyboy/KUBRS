@@ -8,7 +8,7 @@ class RequestController extends Controller
 {
     
 
-    public function index()
+    public function index($user_id)
     {
         return 'страница активных заявок пользователя';
     }
@@ -23,17 +23,7 @@ class RequestController extends Controller
         return 'запрос на создание заявки';
     }
 
-    public function edit($request_id)
-    {
-        return 'страница редактирования заявки';
-    }
-
-    public function update($request_id)
-    {
-        return 'запрос на редактирование заявки';
-    }
-
-    public function destroy($request_id)
+    public function delete($request_id)
     {
         return 'запрос на удаление заявки';
     }

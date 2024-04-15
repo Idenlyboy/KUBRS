@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" type="text/css" href="{{asset('css/login_page_style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/register_page_style.css') }}">
 </head>
  
 <body>
@@ -43,7 +43,7 @@
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
  
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>Вход</h1>
+          <h1>Зарегистрироваться</h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
@@ -51,31 +51,44 @@
               <span class="padding-bottom--15"></span>
               <form id="stripe-login">
                 <div class="field padding-bottom--24">
+                  <label for="dogovor">Номер Договора</label>
+                  <input type="dogovor" name="dogovor">
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="name_reg">Имя</label>
+                  <input type="name_reg" name="name_reg">
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="first_name_reg">Фамилия</label>
+                  <input type="first_name_reg" name="first_name_reg">
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="comnata">Номер Комнаты</label>
+                  <input type="comnata" name="comnata">
+                </div>
+                <div class="field padding-bottom--24">
                   <label for="email">Почта</label>
                   <input type="email" name="email">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
                     <label for="password">Пароль</label>
-                    <div class="reset-pass">
-                      <a href="{{ route('users.pass_recover') }}">Забыли пароль?</a>
-                    </div>
                   </div>
                   <input type="password" name="password">
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Войти"><!--Марк-->
+                  <input type="submit" name="submit" value="Зарегистрироваться">
                 </div>
                 <div class="field">
-                  <a class="ssolink" href="#"></a>
+                  <a class="ssolink" href="{{ route('auth.store') }}"></a>
                 </div>
               </form>
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>Нет аккаунта? <a href="">Создать</a></span><!--Марк-->
+            <span>Уже есть аккаунт? <a href="">Войти</a></span><!--Марк-->
           </div>
         </div>
       </div>

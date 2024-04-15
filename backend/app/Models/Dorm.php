@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RoleModel extends Model
+class Dorm extends Model
 {
+    //public $table = 'dorms';
     use HasFactory;
-    protected $casts = [
-        'permissions' => 'array'
-    ];
+    public $guarded = [];
+    //public $fillable = [];
 }

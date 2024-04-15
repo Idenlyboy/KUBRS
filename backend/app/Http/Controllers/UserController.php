@@ -7,20 +7,9 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     
-
-    public function index()
+    public function menu()
     {
         return 'страница личного кабинета пользователя';
-    }
-
-    public function create()
-    {
-        return 'страница создания пользователя';
-    }
-
-    public function store()
-    {
-        return 'запрос на создание пользователя';
     }
 
     public function edit($user_id)
@@ -33,10 +22,20 @@ class UserController extends Controller
         return 'запрос на редактирование пользователя';
     }
 
-    public function destroy($user_id)
+    public function delete($user_id)
     {
         return 'запрос на удаление пользователя';
     }
 
+    public function pass_recovery()
+    {
+        return view('pass_recovery_page');
+    }
+
+    public function recovery(Request $request)
+    {
+        
+        return 'запрос на изменение пароля пользователя';
+    }
 
 }

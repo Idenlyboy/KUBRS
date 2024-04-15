@@ -6,40 +6,43 @@ use App\Http\Requests\RegisterRequest;
 
 class AuthController extends Controller
 {
-    public function index()
+
+    public function register()
     {
-        return view('');
-        return 'страница личного кабинета пользователя';
+        return view('register_page');
     }
 
-    public function create()
-    {
-        return 'страница создания пользователя';
-    }
-
-    public function login(Request $request)
-    {
-        return 'запрос на вход пользователя';
-    }
-
-    public function register(RegisterRequest $request)
+    public function store(RegisterRequest $request)
     {
         $data = $request->validate();
+        $data['email_verified'] = false;
+        email_verify($request);
         
     }
 
-    public function edit($user_id)
+    public function login()
     {
-        return 'страница редактирования пользователя';
+        return view('login_page');
     }
 
-    public function update($user_id)
+    public function auth(Request $request)
     {
-        return 'запрос на редактирование пользователя';
+        // need validate auth request
     }
 
-    public function destroy($user_id)
+    public function email_verify(Request $request)
     {
-        return 'запрос на удаление пользователя';
+        // need validate token
+        // send confirmation code to email
+        return view('email_verify_page');
     }
+
+    public function verify(Request $request)
+    {
+        $confirmation_code = $request->input('dogovor');
+        // validate confirmation code
+        // if validated, then update account;
+        return 'запрос на подтверждение почты';
+    }
+
 }
