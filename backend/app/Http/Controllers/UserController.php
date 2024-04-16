@@ -27,14 +27,16 @@ class UserController extends Controller
         return 'запрос на удаление пользователя';
     }
 
-    public function pass_recovery()
+    public function pass_recovery(Request $request)
     {
+        $user_email = $request.input('dogovor');
+        // validate user_email
+        // send confirmation code to user_email
         return view('pass_recovery_page');
     }
 
     public function recovery(Request $request)
     {
-        
         return 'запрос на изменение пароля пользователя';
     }
 

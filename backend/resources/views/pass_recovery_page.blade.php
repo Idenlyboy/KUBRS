@@ -56,15 +56,15 @@
                 </div>
                 <div class="reset-pass">
                   <h6 href=>Укажите адрес почты, указанный при регистрации.</br>
-                    На этот адрес будет выслана ссылка для восстановления пароля</h6>
+                    На этот адрес будет выслан код для восстановления пароля</h6>
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Отправить"><!--Марк-->
+                  <input type="submit" name="submit" value="Отправить">
                 </div>
                 <div class="field">
-                  <a class="ssolink" href="#"></a>
+                  <a class="ssolink" href="{{ route(users.pass_recover) }}"></a>
                 </div>
               </form>
             </div>

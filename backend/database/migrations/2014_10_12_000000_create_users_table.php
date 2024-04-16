@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('room_num');
             $table->string('contract_num');
             $table->timestamp('email_verified_at')->nullable();
-
+            $table->string('remember_token');
             $table->string('password');
             $table->rememberToken();
         });
@@ -35,7 +35,7 @@ return new class extends Migration
             $table->integer('room_num')->nullable();
             $table->string('contract_num')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-
+            $table->string('remember_token');
             $table->string('password');
             $table->rememberToken();
         });

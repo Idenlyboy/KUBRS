@@ -88,7 +88,7 @@
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>Уже есть аккаунт? <a href="">Войти</a></span><!--Марк-->
+            <span>Уже есть аккаунт? <a href="{{ route('auth.login') }}">Войти</a></span>
           </div>
         </div>
       </div>

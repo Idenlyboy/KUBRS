@@ -27,6 +27,8 @@ class AuthController extends Controller
 
     public function auth(Request $request)
     {
+        $user_email = $request.input('email');
+        $user_password = $request.input('password');
         // need validate auth request
     }
 
@@ -39,7 +41,8 @@ class AuthController extends Controller
 
     public function verify(Request $request)
     {
-        $confirmation_code = $request->input('dogovor');
+        $user_confirmation_code = $request->input('dogovor');
+        $actual_confirmation_code = $user->confirmation_code;
         // validate confirmation code
         // if validated, then update account;
         return 'запрос на подтверждение почты';

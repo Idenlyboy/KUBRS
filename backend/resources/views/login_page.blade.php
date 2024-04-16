@@ -66,16 +66,16 @@
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Войти"><!--Марк-->
+                  <input type="submit" name="submit" value="Войти">
                 </div>
                 <div class="field">
-                  <a class="ssolink" href="#"></a>
+                  <a class="ssolink" href="{{ route('auth.login') }}"></a>
                 </div>
               </form>
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>Нет аккаунта? <a href="">Создать</a></span><!--Марк-->
+            <span>Нет аккаунта? <a href="{{ route('auth.register') }}">Создать</a></span>
           </div>
         </div>
       </div>
