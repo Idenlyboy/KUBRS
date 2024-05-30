@@ -32,7 +32,7 @@ class UserController extends Controller
         $user_email = $request.input('dogovor');
         // validate user_email
         // send confirmation code to user_email
-        return view('pass_recovery_page');
+        return view('pass_recovery.index');
     }
 
     public function recovery(Request $request)

@@ -43,7 +43,9 @@
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
  
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>Подтверждение почты</h1>
+          <h1>
+            {{__('Подтверждение почты')}}
+          </h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
@@ -51,19 +53,20 @@
               <span class="padding-bottom--15"></span>
               <form id="stripe-login">
                 <div class="field padding-bottom--24">
-                  <label for="dogovor">Код подтверждения</label>
+                  <label for="dogovor">
+                    {{__('Код подтверждения')}}
+                  </label>
                   <input type="dogovor" name="dogovor">
                 </div>
                 <div class="reset-pass">
-                  <h6 href=>Чтобы активировать ваш личный кабинет, требуется подвердить ваш адрес электронной почты</h6>
+                  <h6 href=>{{__('Чтобы активировать ваш личный кабинет, требуется подвердить ваш адрес электронной почты')}}</h6>
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Активировать">
-                </div>
-                <div class="field">
-                  <a class="ssolink" href="{{ route('auth.verify') }}"></a>
+                  <button type="submit">
+                    {{__('Активировать')}}
+                  </button>
                 </div>
               </form>
             </div>

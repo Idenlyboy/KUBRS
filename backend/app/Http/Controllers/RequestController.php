@@ -18,14 +18,14 @@ class RequestController extends Controller
         return 'страница создания заявки';
     }
 
-    public function store()
+    public function store(Request $request)
     {
         return 'запрос на создание заявки';
     }
 
-    public function delete($request_id)
+    public function delete($requests_id)
     {
-        return 'запрос на удаление заявки';
+        return 'запрос на удаление заявки(ок)';
     }
 
 

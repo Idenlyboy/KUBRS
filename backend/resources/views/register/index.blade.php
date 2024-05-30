@@ -43,52 +43,67 @@
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
  
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>Зарегистрироваться</h1>
+          <h1>
+            {{__('Зарегистрироваться')}}
+          </h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
               <span class="padding-bottom--15"></span>
-              <form id="stripe-login">
+              <form action="{{ route('auth.store') }}">
                 <div class="field padding-bottom--24">
-                  <label for="dogovor">Номер Договора</label>
+                  <label for="dogovor">
+                    {{__('Номер Договора')}}
+                  </label>
                   <input type="dogovor" name="dogovor">
                 </div>
                 <div class="field padding-bottom--24">
-                  <label for="name_reg">Имя</label>
+                  <label for="name_reg">
+                    {{__('Имя')}}
+                    </label>
                   <input type="name_reg" name="name_reg">
                 </div>
                 <div class="field padding-bottom--24">
-                  <label for="first_name_reg">Фамилия</label>
+                  <label for="first_name_reg">
+                    {{__('Фамилия')}}
+                  </label>
                   <input type="first_name_reg" name="first_name_reg">
                 </div>
                 <div class="field padding-bottom--24">
-                  <label for="comnata">Номер Комнаты</label>
+                  <label for="comnata">
+                    {{__('Номер Комнаты')}}
+                  </label>
                   <input type="comnata" name="comnata">
                 </div>
                 <div class="field padding-bottom--24">
-                  <label for="email">Почта</label>
+                  <label for="email">
+                    {{__('Почта')}}
+                  </label>
                   <input type="email" name="email">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
-                    <label for="password">Пароль</label>
+                    <label for="password">
+                      {{__('Пароль')}}
+                    </label>
                   </div>
                   <input type="password" name="password">
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Зарегистрироваться">
-                </div>
-                <div class="field">
-                  <a class="ssolink" href="{{ route('auth.store') }}"></a>
+                  <button type="submit">{{__('Зарегистрироваться')}}</button>
                 </div>
               </form>
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>Уже есть аккаунт? <a href="{{ route('auth.login') }}">Войти</a></span>
+            <span>
+              {{__('Уже есть аккаунт?')}}
+              <a href="{{ route('auth.login') }}">
+              {{__('Войти')}}
+              </a></span>
           </div>
         </div>
       </div>

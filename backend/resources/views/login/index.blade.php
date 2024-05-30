@@ -43,22 +43,29 @@
       <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
  
         <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>Вход</h1>
+          <h1>
+            {{__('Вход')}}
+          </h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
               <span class="padding-bottom--15"></span>
-              <form id="stripe-login">
+              <form action="{{ route('auth.auth') }}" method="POST">
+                @csrf
                 <div class="field padding-bottom--24">
-                  <label for="email">Почта</label>
+                  <label for="email">
+                    {{__('Почта')}}
+                  </label>
                   <input type="email" name="email">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
-                    <label for="password">Пароль</label>
+                    <label for="password">
+                      {{__('Пароль')}}
+                    </label>
                     <div class="reset-pass">
-                      <a href="{{ route('users.pass_recover') }}">Забыли пароль?</a>
+                      <a href="{{ route('users.pass_recover') }}">{{__('Забыли пароль?')}}</a>
                     </div>
                   </div>
                   <input type="password" name="password">
@@ -66,16 +73,21 @@
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <input type="submit" name="submit" value="Войти">
+                  <button type="submit" name="submit">
+                    {{__('Войти')}}
+                  </button>
                 </div>
-                <div class="field">
-                  <a class="ssolink" href="{{ route('auth.login') }}"></a>
-                </div>
+                <div class="field"> </div>
               </form>
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>Нет аккаунта? <a href="{{ route('auth.register') }}">Создать</a></span>
+            <span>
+              {{__('Нет аккаунта?')}}
+              <a href="{{ route('auth.register') }}">
+                {{__('Создать')}}
+              </a>
+            </span>
           </div>
         </div>
       </div>

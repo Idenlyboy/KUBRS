@@ -52,7 +52,6 @@ Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'store'])->name('auth.store');
     Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
     Route::post('/login', [AuthController::class, 'auth'])->name('auth.auth');
-    Route::get('/email_verify/{user_id}', [AuthController::class, 'email_verify'])->name('auth.email_verification');
     Route::post('/email_verify', [AuthController::class, 'verify'])->name('auth.verify');
 });
 
